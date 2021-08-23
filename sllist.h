@@ -2,11 +2,11 @@
 #define SLLIST_H_INCLUDED
 
 /*------------------------------------------------------------------------------
-EspecificaÁ„o das operaÁıes do TAD SLLIST genÈrico:
+Especifica√ß√£o das opera√ß√µes do TAD SLLIST gen√©rico:
 ------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-Estrutura _sllist_: DeclaraÁ„o de tipo que contÈm as vari·veis que compıem a SLLIST.
+Estrutura _sllist_: Declara√ß√£o de tipo que cont√©m as vari√°veis que comp√µem a SLLIST.
 ------------------------------------------------------------------------------*/
 typedef struct _slnode_ SLNode;
 typedef struct _sllist_ SLList;
@@ -28,91 +28,91 @@ int sllDestroy(SLList *l);
 #else
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllCreate: Cria um novo TAD SLLIST
-Parametro: Recebe o n˙mero de itens para o SLLIST ser criada
+Fun√ß√£o sllCreate: Cria um novo TAD SLLIST
+Parametro: Recebe o n√∫mero de itens para o SLLIST ser criada
 (l!=NULL)
 Retorno: Ponteiro para um novo TAD SLLIST vazio;
-         'NULL' - Caso contr·rio
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern SLList *sllCreate(void);
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllInsertFirst: Insere um item no SLLIST
-Parametros: TAD SLLIST existente, n„o cheio e o item a ser inserido (elm!=NULL)
-Retorno: TRUE(1) - Item incluÌdo no TAD SLLIST;
-         FALSE(0) - Caso contr·rio
+Fun√ß√£o sllInsertFirst: Insere um item no SLLIST
+Parametros: TAD SLLIST existente, n√£o cheio e o item a ser inserido (elm!=NULL)
+Retorno: TRUE(1) - Item inclu√≠do no TAD SLLIST;
+         FALSE(0) - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern int sllInsertFirst( SLList *l, void *data );
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllInsertLast: Insere um item no SLLIST
-Parametros: TAD SLLIST existente, n„o cheio e o item a ser inserido (elm!=NULL)
-Retorno: TRUE(1) - Item incluÌdo no TAD SLLIST;
-         FALSE(0) - Caso contr·rio
+Fun√ß√£o sllInsertLast: Insere um item no SLLIST
+Parametros: TAD SLLIST existente, n√£o cheio e o item a ser inserido (elm!=NULL)
+Retorno: TRUE(1) - Item inclu√≠do no TAD SLLIST;
+         FALSE(0) - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern int sllInsertLast( SLList *l, void *data );
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllRemove: Remove um item de um TAD SLLIST
-Parametros: TAD SLLIST existente, n„o vazia e o item a ser removido (elm!=NULL)
+Fun√ß√£o sllRemove: Remove um item de um TAD SLLIST
+Parametros: TAD SLLIST existente, n√£o vazia e o item a ser removido (elm!=NULL)
 Retorno: Ponteiro para o item removido do TAD SLLIST;
-         'NULL' - Caso contr·rio
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern void *sllRemoveFirst( SLList *l, void *key, int (*cmp)(void*,void*) );
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllRemove: Remove um item de um TAD SLLIST
-Parametros: TAD SLLIST existente, n„o vazia e o item a ser removido (elm!=NULL)
+Fun√ß√£o sllRemove: Remove um item de um TAD SLLIST
+Parametros: TAD SLLIST existente, n√£o vazia e o item a ser removido (elm!=NULL)
 Retorno: Ponteiro para o item removido do TAD SLLIST;
-         'NULL' - Caso contr·rio
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern void *sllRemoveLast( SLList *l);
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllRemove: Remove um item de um TAD SLLIST
-Parametros: TAD SLLIST existente, n„o vazia e o item a ser removido (elm!=NULL)
+Fun√ß√£o sllRemove: Remove um item de um TAD SLLIST
+Parametros: TAD SLLIST existente, n√£o vazia e o item a ser removido (elm!=NULL)
 Retorno: Ponteiro para o item removido do TAD SLLIST;
-         'NULL' - Caso contr·rio
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern void *sllRemoveSpec( SLList *l, void *key, int (*cmp)(void*,void*) );
 
 /*------------------------------------------------------------------------------
-FunÁ„o cofRemoveAll: Remove todos os itens de um TAD SLLIST
-Parametros: TAD ColeÁ„o existente e n„o vazia
+Fun√ß√£o cofRemoveAll: Remove todos os itens de um TAD SLLIST
+Parametros: TAD Cole√ß√£o existente e n√£o vazia
 Retorno: TRUE(1) - Todos os itens retirados do TAD SLLIST;
-         FALSE(0) - Caso contr·rio
+         FALSE(0) - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern int sllRemoveAll(SLList *l);
 
 /*------------------------------------------------------------------------------
-FunÁ„sll: Busca um item em um TAD SLLIST
-Parametros: TAD SLLIST existente, n„o vazia e o item a ser buscado (key!=NULL)
+Fun√ß√£sll: Busca um item em um TAD SLLIST
+Parametros: TAD SLLIST existente, n√£o vazia e o item a ser buscado (key!=NULL)
 Retorno: Ponteiro para o item buscado do TAD SLLIST;
-         'NULL' - Caso contr·rio
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern void *sllQuery( SLList *l, void *key, int (*cmp)(void*,void*) );
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllGetFirst: Pega o primeiro item de um TAD SLLIST
-Parametros: TAD SLLIST existente e n„o vazia
+Fun√ß√£o sllGetFirst: Pega o primeiro item de um TAD SLLIST
+Parametros: TAD SLLIST existente e n√£o vazia
 Retorno: Ponteiro para o primeiro item do TAD SLLIST;
-         'NULL' - Caso contr·rio
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern void *sllGetFirst( SLList *l );
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllGetNext: pega o prÛximo item de um TAD SLLIST
-Parametros: TAD SLLIST existente, n„o vazia
-Retorno: Ponteiro para o prÛximo item do TAD SLLIST;
-         'NULL' - Caso contr·rio
+Fun√ß√£o sllGetNext: pega o pr√≥ximo item de um TAD SLLIST
+Parametros: TAD SLLIST existente, n√£o vazia
+Retorno: Ponteiro para o pr√≥ximo item do TAD SLLIST;
+         'NULL' - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern void *sllGetNext( SLList *l );
 
 /*------------------------------------------------------------------------------
-FunÁ„o sllDestroy: DestrÛi um TAD SLLIST
+Fun√ß√£o sllDestroy: Destr√≥i um TAD SLLIST
 Parametro: Ponteiro para um TAD SLLIST
-Retorno: TRUE(1) - TAD SLLIST destruÌdo liberando seu espaÁo da memÛria;
-         FALSE(0) - Caso contr·rio
+Retorno: TRUE(1) - TAD SLLIST destru√≠do liberando seu espa√ßo da mem√≥ria;
+         FALSE(0) - Caso contr√°rio
 ------------------------------------------------------------------------------*/
 extern int sllDestroy(SLList *l);
 
