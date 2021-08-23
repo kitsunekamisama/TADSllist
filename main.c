@@ -1,8 +1,8 @@
 /*main.l
-Arquivo com a especificação de um Tipo Abstrato de Dados (TAD) para uma lista genérica
+Arquivo com a especificaÃ§Ã£o de um Tipo Abstrato de Dados (TAD) para uma lista genÃ©rica
 --------------------------------------------------------------------------------
-Autora: Nikki Löhnhoff
-Data:  Julho/2021
+Autora: Nikki LÃ¶hnhoff
+Data:  Agosto/2021
 ------------------------------------------------------------------------------*/
 
 #ifndef _main_c_
@@ -16,12 +16,12 @@ Data:  Julho/2021
 #define FALSE 0
 
 /*------------------------------------------------------------------------------
-Implementação das operações na main:
+ImplementaÃ§Ã£o das operaÃ§Ãµes na main:
 ------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-Estrutura _livro_: Declaração de tipo que contém as variáveis que compõem o LIVRO.
-Variáveis: char    nome[30]: Vetor de String com o nome da nome do LIVRO
+Estrutura _livro_: DeclaraÃ§Ã£o de tipo que contÃ©m as variÃ¡veis que compÃµem o LIVRO.
+VariÃ¡veis: char    nome[30]: Vetor de String com o nome da nome do LIVRO
            int     qpaginas:  A qpaginas do LIVRO em tipo inteiro
            int     nexemplares:   O numero de exemplares do LIVRO em tipo inteiro
            float   preco:     O preco do LIVRO em tipo float
@@ -37,12 +37,12 @@ typedef struct _livro_{
 }Livro;
 
 /*------------------------------------------------------------------------------
-Função comCodigo: Compara a codigo de um livro
+FunÃ§Ã£o comCodigo: Compara a codigo de um livro
 Parametro: Ponteiro para um elemento k a ser comparado com os elementos dentro da Lista
 Retorno: TRUE(1) -  caso o elemento for igual ao do TAD Lista;
-         FALSE(0) - Caso contrário
+         FALSE(0) - Caso contrÃ¡rio
 ------------------------------------------------------------------------------*/
-//Função de comparação por codigo do livro
+//FunÃ§Ã£o de comparaÃ§Ã£o por codigo do livro
 int comCodigo(void *k, void *elm){
     long *icodigo = (long*)k;
     Livro *Celm = (Livro*)elm;
@@ -57,12 +57,12 @@ int comCodigo(void *k, void *elm){
 }
 
 /*------------------------------------------------------------------------------
-Função comNome: Compara a Nome de um livro
+FunÃ§Ã£o comNome: Compara a Nome de um livro
 Parametro: Ponteiro para um elemento k a ser comparado com os elementos dentro da Lista
 Retorno: TRUE(1) -  caso o elemento for igual ao do TAD Lista;
-         FALSE(0) - Caso contrário
+         FALSE(0) - Caso contrÃ¡rio
 ------------------------------------------------------------------------------*/
-//Função de comparação por nome do livro
+//FunÃ§Ã£o de comparaÃ§Ã£o por nome do livro
 int comNome(void *key,void *elm){
 	char strkey[30];
 	char strelm[30];
@@ -80,12 +80,12 @@ int comNome(void *key,void *elm){
 }
 
 /*------------------------------------------------------------------------------
-Função comPaginas: Compara a Preco de um livro
+FunÃ§Ã£o comPaginas: Compara a Preco de um livro
 Parametro: Ponteiro para um elemento k a ser comparado com os elementos dentro da Lista
 Retorno: TRUE(1) -  caso o elemento for igual ao do TAD Lista;
-         FALSE(0) - Caso contrário
+         FALSE(0) - Caso contrÃ¡rio
 ------------------------------------------------------------------------------*/
-//Função de comparação por preco do livro
+//FunÃ§Ã£o de comparaÃ§Ã£o por preco do livro
 int comPaginas(void *k, void *elm){
     int *ipagina = (int*)k;
     Livro *Pag = (Livro*)elm;
@@ -101,11 +101,11 @@ int comPaginas(void *k, void *elm){
 }
 
 
-/*Variável |op| é para as opcoes do menu principal
- *Variável |op2| é para a opcões de busca e remoção por CODIGO ou NOME
- *Variável |tam| é para o tamanho da Lista a ser criado
+/*VariÃ¡vel |op| Ã© para as opcoes do menu principal
+ *VariÃ¡vel |op2| Ã© para a opcÃµes de busca e remoÃ§Ã£o por CODIGO ou NOME
+ *VariÃ¡vel |tam| Ã© para o tamanho da Lista a ser criado
  *Variavel |destroi| usada para auxiliar na detruicao do Lista
- *Variavel |inseriu| verifica se foi inserido um elemento do tipo livro na Lista ou não
+ *Variavel |inseriu| verifica se foi inserido um elemento do tipo livro na Lista ou nÃ£o
  *Variavel |cont| usada pra delimitar a quantidade de livros INSERIDOS e REMOVIDOS da Lista
  *
  *
@@ -235,6 +235,7 @@ int main(){
                     if(liv!=NULL){
                         int i =0;
                         liv = (Livro*)sllGetFirst(l);
+                        //l->cur = l->first;
                         if(liv!=NULL){
                             printf("\nOs livros que estao na Lista:\n");
                         }else{
