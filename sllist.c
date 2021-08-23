@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 sllist.l
-Arquivo com a especificação de um Tipo Abstrato de Dados (TAD) para uma SLLIST genérico
+Arquivo com a especificaÃ§Ã£o de um Tipo Abstrato de Dados (TAD) para uma SLLIST genÃ©rico
 ------------------------------------------------------------------------------*/
 
 #ifndef _sllist_c_
@@ -14,14 +14,14 @@ Arquivo com a especificação de um Tipo Abstrato de Dados (TAD) para uma SLLIST g
 #endif // _sllist_h_
 
 /*------------------------------------------------------------------------------
-Implementação das operações do TAD SLLIST genérico:
+ImplementaÃ§Ã£o das operaÃ§Ãµes do TAD SLLIST genÃ©rico:
 ------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-Estrutusllist: Declaração de tipo que contém as variáveis que compõem a SLLIST.
-Variáveis: void **elms:  Vetor com os itens da SLLIST
-           int max:      Tamanho máximo de itens da SLLIST
-           int first:    Número atual de itens na SLLIST
+Estrutusllist: DeclaraÃ§Ã£o de tipo que contÃ©m as variÃ¡veis que compÃµem a SLLIST.
+VariÃ¡veis: void **elms:  Vetor com os itens da SLLIST
+           int max:      Tamanho mÃ¡ximo de itens da SLLIST
+           int first:    NÃºmero atual de itens na SLLIST
            int cur:      Elemento atual na SLLIST
 ------------------------------------------------------------------------------*/
 typedef struct _slnode_{
@@ -35,12 +35,12 @@ typedef struct _sllist_{
     SLNode *cur;
 }SLList;
 
-SLList *sllCreate(void){
+SLList *sllCreate(){
     SLList *l;
     l=(SLList *)malloc(sizeof(SLList));
     if(l!=NULL){
         l -> first = NULL;
-        l -> cur = NULL;
+        l -> cur = l->first;
         return l;
     }
     return NULL;
@@ -164,7 +164,7 @@ void *sllQuery( SLList *l, void *key, int (*cmp)(void*, void*) ){
 
     if(l != NULL){
         if(l -> first != NULL){
-            cur = l > first;
+            cur = l->first;
             stat = cmp(key, cur -> data);
             while( stat != TRUE && cur -> next != NULL ){
                 cur = cur -> next;
@@ -193,9 +193,9 @@ void *sllGetFirst(SLList *l){
 
 void *sllGetNext(SLList *l){
     if(l!=NULL){
-        if(l -> cur != NULL){
+        if(l -> cur->next != NULL){
             l -> cur = l -> cur -> next;
-            return l -> cur;
+            return l -> cur ->data;
         }
     }
     return NULL;
